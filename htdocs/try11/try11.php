@@ -17,10 +17,9 @@
 	var_dump($iScore >= 60 );
 	print " </p>";
 
-	if( $iScore == 100 )
+	if( $iScore == 100 ):
 		print "<p>満点です。</p>";
-	else
-	if( $iScore >= 60 ):
+	elseif( $iScore >= 60 ):
 		print "<p>合格です。</p>";
 	else:
 		print "<p>不合格です。</p>";
