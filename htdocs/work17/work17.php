@@ -10,7 +10,7 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>WORK16</title>
+	<title>WORK17</title>
 </head>
 <body>
 	<div>名前</div>
