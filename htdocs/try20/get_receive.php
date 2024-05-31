@@ -10,7 +10,7 @@
 		// テキストが入力されているとき
 		if( isset( $_GET["display_text"] ) && $_GET["display_text"] != "" )
 		{
-			echo "入力した内容：" . $_GET["display_text"];
+			echo "入力した内容：" . htmlspecialchars( $_GET["display_text"], ENT_QUOTES, "UTF-8" );
 		}
 		else // 入力されてない時
 		{
