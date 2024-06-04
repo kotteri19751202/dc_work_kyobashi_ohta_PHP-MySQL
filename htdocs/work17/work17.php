@@ -29,5 +29,5 @@
 		// チェックボックス02の値
 		if( isset( $_POST["check_03"] ) ) echo "選択肢03：" . $_POST["check_03"] . "<br>"; 
 	?>
-	</body>
+</body>
 </html>
