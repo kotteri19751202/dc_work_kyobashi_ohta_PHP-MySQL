@@ -1,9 +1,3 @@
-<?php
-	$food_genre = '';
-	if (isset($_POST['food_genre'])) {
-		$food_genre = htmlspecialchars($_POST['food_genre'], ENT_QUOTES, 'UTF-8');
-	}
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
