@@ -21,7 +21,7 @@
 		<div>input①半角英字で入力を行ってください。</div>
 		<input type="text" name="input_1" value=<?php echo $strInput1 ?>>
 		
-		<div>input①半角英字で入力を行ってください。</div>
+		<div>input②半角英字で入力を行ってください。</div>
 		<input type="text" name="input_2" value=<?php echo $strInput2 ?>>
 		<br>
 		<input type="submit" value="送信">
