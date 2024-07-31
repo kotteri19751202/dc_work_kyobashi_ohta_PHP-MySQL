@@ -38,7 +38,7 @@ CREATE TABLE tbl_work30_image (
 
 	// ページタイプ列挙型
 	define( "E_PAGE_TYPE_IMAGE_LIST", 		"0"		); // 画像一覧
-	define( "E_PAGE_TYPE_IMAGE_Upload", 	"1"		); // 画像投稿
+	define( "E_PAGE_TYPE_IMAGE_UPLOAD", 	"1"		); // 画像投稿
 
 	//===============================================
 	// 画像の投稿 
@@ -234,7 +234,7 @@ CREATE TABLE tbl_work30_image (
 	
 
 	// ページタイプ
-	$ePageType = 0;	// 初期は画像一覧
+	$ePageType = E_PAGE_TYPE_IMAGE_LIST;	// 初期は画像一覧
 
 	// ページタイプが設定されてたら
 	if( false != isset( $_GET["page_type"] ) )
@@ -243,7 +243,7 @@ CREATE TABLE tbl_work30_image (
 	}
 	
 	// 画像投稿ページの時
-	if( $ePageType == 1 )
+	if( $ePageType == E_PAGE_TYPE_IMAGE_UPLOAD )
 	{
 		// POSTチェック 
 		checkPost();
@@ -342,16 +342,16 @@ CREATE TABLE tbl_work30_image (
 	<!---------------------------------------------------->
 	<?php
 		// 画像一覧ページの時
-		if( $ePageType == 0 )
+		if( $ePageType == E_PAGE_TYPE_IMAGE_LIST )
 		{
 			echo "<p class='caption'>画像一覧</p>\n";
 		}
 		else
 		// 画像投稿ページの時
-		if( $ePageType == 1 )
+		if( $ePageType == E_PAGE_TYPE_IMAGE_UPLOAD )
 		{
 			echo "<p class='caption'>画像投稿</p>\n";
-			echo "<a href='./work30.php?page_type=0'>画像一覧ページへ</a>\n";
+			echo "	<a href='./work30.php?page_type=0'>画像一覧ページへ</a>\n";
 			echo "<br>\n";
 			echo "<form method='post' enctype='multipart/form-data'>\n";
 			echo "	画像名<br>\n";
@@ -388,14 +388,14 @@ CREATE TABLE tbl_work30_image (
 			while( $arrRow = $result->fetch_assoc() )
 			{
 				// 画像一覧ページの時
-				if( $ePageType == 0 )
+				if( $ePageType == E_PAGE_TYPE_IMAGE_LIST )
 				{
 					// 公開フラグがOFFの時
 					if( $arrRow['PublicFlg'] == 0 ) continue;
 				}
 				else
 				// 画像投稿ページの時
-				if( $ePageType == 1 )
+				if( $ePageType == E_PAGE_TYPE_IMAGE_UPLOAD )
 				{
 					$strPublicMsg = "非表示にする";
 					$strBackGroundColorClass = "background-color-white";
@@ -414,7 +414,7 @@ CREATE TABLE tbl_work30_image (
 				echo "		<img class='image' src='". IMAGE_DIR . "{$arrRow['ImageFileName']}' alt='{$arrRow['ImageFileName']}'/>\n";
 				
 				// 画像投稿ページの時
-				if( $ePageType == 1 )
+				if( $ePageType == E_PAGE_TYPE_IMAGE_UPLOAD )
 				{
 					echo "		<form method='post'>\n";
 					echo "			<input type='hidden' name='image_id' value='{$arrRow['ImageID']}'>\n";
@@ -438,7 +438,7 @@ CREATE TABLE tbl_work30_image (
 		echo "</div>\n";
 
 		// 画像一覧ページの時
-		if( $ePageType == 0 )
+		if( $ePageType == E_PAGE_TYPE_IMAGE_LIST )
 		{
 			echo "<a href='./work30.php?page_type=1'>画像投稿ページへ</a>\n";
 		}
