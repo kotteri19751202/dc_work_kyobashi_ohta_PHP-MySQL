@@ -16,7 +16,7 @@
 		{
 			// データベースへ接続
 			$db = new PDO( DSN, DB_USER_NAME, DB_PASS_WORD );
-			//PDOのエラー時にPEOExceptionが発生するように設定
+			// PDOのエラー時にPEOExceptionが発生するように設定
 			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 			// トランザクション開始
@@ -24,11 +24,11 @@
 
 			// UPDATEクエリ作成
 			$sql = "UPDATE product Set price = 160 WHERE product_id = 1";
-			// クエリ事項
+			// クエリ実行
 			$result = $db->query( $sql );
 			// 件数取得
 			$iRow = $result->rowCount();
-			// 更新件数憑依
+			// 更新件数表示
 			echo $iRow."件更新しました。<br>";
 			// コミット
 			$db->commit();
