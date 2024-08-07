@@ -8,7 +8,7 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>TRY46</title>
+	<title>TRY47</title>
 </head>
 <body>
 	<?php
