@@ -52,7 +52,6 @@
 
 		// SELECTクエリ
 		$sql = "SELECT product_id, product_name, price FROM product WHERE price >= ? AND product_id >= ?";
-		$stmt = $db->prepare( $sql );
 		// prepareメソッドによるクエリの実行準備をする
 		$stmt = $db->prepare( $sql );
 		// 値をバインドする
