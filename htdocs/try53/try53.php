@@ -16,13 +16,13 @@
 		$strCookieConfirmation = "";
 	}
 
-	if( isset( $COOKIE["login_id"]) === TRUE )
+	if( isset( $_COOKIE["login_id"]) === TRUE )
 	{
-		$strLoginId = $_COOKIE["login_id"];
+		$strLoginID = $_COOKIE["login_id"];
 	}
 	else
 	{
-		$strLoginId = "";
+		$strLoginID = "";
 	}
 	?>
 
