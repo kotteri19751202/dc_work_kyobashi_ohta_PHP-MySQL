@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>TRY56</title>
+	<title>TRY57</title>
 	<style type="text/css">
 		
 		table, td, th
