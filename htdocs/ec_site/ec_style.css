@@ -1,0 +1,408 @@
+/* CSS変数宣言 */
+:root{
+	/* フォントサイズ */
+	--fs-xx-large: 	28px;
+	--fs-x-large: 	24px;
+	--fs-large: 	20px;
+	--fs-medium: 	16px;
+	--fs-small: 	14px;
+	--fs-x-small: 	12px;
+	--fs-xx-small: 	11px;
+
+	/* フォント色 */
+	--h1-font-color: #000000;
+	--h2-font-color: #006000;
+	--h3-font-color: #006000;
+	--h4-font-color: #000000;
+
+	--main-font-color:	#FFFFFF;
+	--sub-font-color:	#000000;
+
+	--background-color:					#b0ffb0; 	/* 共通の背景色 */
+	--border-color:						#818694; 	/* 共通のボーダー色 */
+
+	/* その他の色 */
+	--item-box-back-ground-color-white:	white;		/* アイテムボックス背景色（白） */
+	--item-box-back-ground-color-gray:	gray;		/* アイテムボックス背景色（灰色） */
+
+	--cart-item-total-price-color:		darkred;	/* カートアイテム合計金額 */
+	
+	--header-background-color: 			#003000cc; /* 背景のみ透過 */
+	--btn-shadow-color: 				#818694;
+}
+
+/* リセット設定 ------------------------------------------*/
+*{
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* 共通設定 ----------------------------------------------*/
+.block{
+	display: block;
+}
+.inline-block{
+	display: inline-block;
+}
+
+a{
+	text-decoration: none;
+	color:inherit;
+}
+
+h1,h2,h3,h4{
+	text-align: center;
+	padding: 0 10px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+h1{
+	color: var(--h1-font-color);
+	border-bottom: solid 2px var(--border-color);
+}
+h2{
+	color: var(--h2-font-color);
+	background-color: var(--background-color);
+	border: solid 1px var(--border-color);
+}
+h3{
+	color: var(--h3-font-color);
+}
+h4{
+	color: var(--h4-font-color);
+}
+
+
+/*h2{*/ 
+	/*ページ内リンクを押したときに、ヘッダーの下に隠れるのを回避する設定、不要なら削除する */
+	/*padding-top: 80px;
+	margin-top: -80px;*/
+/*}*/
+
+.clearfix::after{
+	/* float解除用 */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+img{
+	/* 画像の下の余白をなくす対応 */
+    vertical-align: bottom;
+}
+
+ul{
+	list-style: none;
+}
+
+.btn{
+	font-size: var(--fs-medium);
+	color: var(--main-font-color);
+	font-weight: bold;
+	/*width: 300px;*/
+	height: 40px;
+	background-color: var(--background-color);
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0px 4px 0px var(--btn-shadow-color);
+	margin: 0 auto;
+	/*margin-top: 20px;
+	margin-bottom: 80px;*/
+}
+
+.btn:active{
+	box-shadow: none;
+	position: relative;
+	top: 4px;
+}
+
+.min-width{
+	min-width: 460px;
+}
+
+.main-container{
+	width: 920px; /*1024px;*/
+	max-width: 90%;
+	margin: 0 auto;
+	margin-bottom: 60px;
+}
+
+body{
+	/* windowsでは存在しなので、メイリオになってる？*/
+	font-family: "Noto Sans JP", sans-serif;
+	letter-spacing: 0.05em;
+	/*display: flex;
+	flex-direction: column;*/
+	/*position: relative;*/
+}
+
+
+
+/* ヘッダー関連 ------------------------------------------*/
+header{
+	height: 80px;
+	width: 100%;
+	background-color: var(--header-background-color); /* 背景のみ透過 */
+	position :fixed;
+	/*position :sticky;*/
+	top: 0;
+	z-index: 10;
+	color: var( --main-font-color );
+	font-weight: bold;
+	display: flex;
+	align-items: center; /* フレックスアイテムの高さ調整 */
+	padding: 0 20px;
+	/*flex-direction: row;*/
+	/*margin-bottom: 10px;*/
+
+}
+/* ヘッダー左 */
+.header-left{
+	font-size: var(--fs-xx-large);
+}
+/* ヘッダー右 */
+.header-right{
+	text-align: right;
+	line-height: 36px;
+	margin-left: auto;
+}
+
+/* メインビジュアル関連 ----------------------------------*/
+.mv-wrapper{
+	background-size: cover;
+	background-position: center;
+	height: 20vh;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.mv-orange{
+	background-image: url(./image/mv-orange.jpg);
+}
+.mv-apple{
+	background-image: url(./image/mv-apple.jpg);
+}
+.mv-fruit{
+	background-image: url(./image/mv-fruit.jpg);
+}
+
+/* ログイン関連 ------------------------------------------*/
+
+/* アカウントフォーム */
+.account-form{
+	text-align: center;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+/* アカウント入力説明 */
+.account-form-description{
+	text-align: center;
+	font-size: var(--fs-xx-small);
+}
+
+/* アイテム登録関連 ------------------------------------------*/
+
+/* アイテム登録フォーム */
+.regist-item-form{
+	/*text-align: center;*/
+	width: fit-content;
+	line-height: 30px;
+	margin: 0 auto;
+	margin-bottom: 40px;
+}
+/* アイテム登録ボタン */
+.regist-item-btn{
+	font-size: var(--fs-medium);
+	font-weight: bold;
+}
+
+/* アイテムリスト関連 ------------------------------------------*/
+
+/* フレックスボックス */
+.flex-item-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	/*align-items: center;*/
+	/*justify-content: space-around;*/
+	flex-wrap : wrap; /* 画面幅に合わせてカラム落ちさせる */
+	/*margin: 0 auto;*/
+	margin-bottom: 30px;
+}
+/* アイテムボックス */
+.item-box{
+	width: 220px;
+	/*height: 350px;*/
+	margin:5px;
+	font-size: var(--fs-medium);
+	/*background-color:var(--item-box-back-ground-color-gray);*/
+	color: var(--sub-font-color);
+	text-align: center; /* ボックス内中テキスト央寄せ*/
+	border: solid 1px var(--item-box-back-ground-color-gray);
+	/*border-radius: 5px;*/
+}
+/* 空のアイテムボックス（最後の列の左寄せ用）*/
+.item-box-empty{
+	height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	border:solid 0px;
+}
+
+/* アイテム画像 */
+.item-image{
+	width: 200px;
+	height:200px;
+	margin-top: 8px;
+}
+/* アイテム名 */
+.item-name{
+	font-size: var(--fs-x-large);
+	font-weight: bold;
+	width: 200px;
+	margin:0 auto;
+	margin-bottom: 8px;
+}
+/* アイテム価格 */
+.item-price{
+	font-weight: bold;
+	width: 200px;
+	background-color: var(--background-color);
+	margin:0 auto;
+	margin-bottom: 8px;
+}
+/* アイテム価格（税込み） */
+.item-price span{
+	font-size: var(--fs-x-small);
+	font-weight: bold;
+}
+/* アイテム個数 */
+.item-stock-num{
+	font-weight: bold;
+	width: 7em;
+	text-align:right;
+}
+
+/* アイテム個数変更 */
+.update-item-stock-num{
+	font-weight: bold;
+	width: 83px;
+	margin-bottom: 8px;
+}
+
+/* アイテム個数購入結果 */
+.item-stock-num-result{
+	font-weight: bold;
+	width: 200px;
+	margin:0 auto;
+	margin-bottom: 8px;
+}
+/* アイテム個数購入結果（個） */
+.item-stock-num-result span{
+	font-size: var(--fs-x-small);
+	font-weight: bold;
+}
+
+/* アイテム公開フラグ変更 */
+.change-item-public-flg{
+	font-weight: bold;
+	width: 200px;
+	margin-bottom: 8px;
+}
+/* アイテム削除 */
+.delete-item{
+	font-weight: bold;
+	width: 200px;
+	margin-bottom: 8px;
+}
+/* アイテム背景色（白） */
+.item-box-background-color-white{
+	background-color:var(--item-box-back-ground-color-white);
+}
+/* アイテム背景色（灰色） */
+.item-box-background-color-gray{
+	background-color:var(--item-box-back-ground-color-gray);
+}
+
+/* カートに入れる */
+.item-add-cart{
+	font-weight: bold;
+	width: 200px;
+	margin-bottom: 8px;
+}
+/* アイテム売り切れ */
+.item-sold-out{
+	font-weight: bold;
+	background-color:var(--item-box-back-ground-color-gray);
+	margin:0 10px;
+	margin-bottom: 8px;
+}
+
+/* カート関連 ----------------------------------------------*/
+
+/* 合計金額ボックス */
+.cart-total-price-box{
+	display: flex;
+	align-items: center; /* フレックスアイテムの高さ調整 */
+	justify-content: space-around;
+	background-color: var(--background-color);
+	padding: 10px;
+	margin: 10px 0;
+}
+/* 合計金額 */
+.cart-total-price{
+	font-size: var(--fs-xx-large);
+	font-weight: bold;
+	color: var(--cart-item-total-price-color);
+}
+/* 合計金額（税込み） */
+.cart-total-price span{
+	font-size: var(--fs-large);
+	font-weight: bold;
+	color: var(--sub-font-color);
+}
+/* 購入ボタン */
+.cart-buy-item{
+	font-size: var(--fs-medium);
+	font-weight: bold;
+}
+
+/* フッター関連 ----------------------------------------------*/
+footer{
+	width: 100%;
+	background-color: var(--header-background-color);
+	/*position: absolute;*/
+	/*position: sticky;*/
+	position: fixed;
+	bottom: 0;
+	/*z-index: 10;*/
+	/*margin-top: auto;*/
+}
+
+.footer-copyright{
+	font-size: var(--fs-medium);
+	color: var(--main-font-color);
+	text-align: center;
+	padding: 5px 0;
+}
+
+/*=====================================================================*/
+/* レスポンシブ関連 
+/*=====================================================================*/
+@media screen and (max-width: 640px) { /*768px*/
+	/* 共通設定 ----------------------------------------------*/
+	
+	/* ヘッダー関連 ------------------------------------------*/
+	header{
+		height: 48px;
+	}
+	.header-left{
+		line-height: 48px;
+	}	
+	.header-right{
+		display: none;
+	}
+}
