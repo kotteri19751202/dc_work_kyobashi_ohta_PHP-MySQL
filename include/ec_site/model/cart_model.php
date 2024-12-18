@@ -532,9 +532,7 @@ function buyCartItem( $db, &$arrCartData, &$iTotalPrice, &$strCartMsg )
 {
 	// デバッグ表示
 	dprint( $_SESSION["user_id"] );
-	// デバッグ表示
 	dprint( $_POST["item"] );
-	// デバッグ表示
 	dprint( $_POST["cart_total_price"] );
 
 	// 情報が不足してる時
@@ -723,7 +721,7 @@ function buyCartItem( $db, &$arrCartData, &$iTotalPrice, &$strCartMsg )
 
 		// アイテムテーブルの情報を取得する ----------------
 		// クエリ作成（行ロックかける）
-		$strQuery = "SELECT ItemID, StockNum FROM " . TABLE_NAME_ITEM
+		$strQuery = "SELECT ItemID, ItemName, StockNum FROM " . TABLE_NAME_ITEM
 					. " WHERE ItemID IN ( ";
 		
 		// IN句作成
@@ -826,6 +824,9 @@ function buyCartItem( $db, &$arrCartData, &$iTotalPrice, &$strCartMsg )
 
 				 // 購入で在庫がなかったフラグON
 				 $_SESSION["buy_cart_item_result_stock_empty_flg"] = true;
+				 // 購入で在庫がなかったメッセージ
+				 $_SESSION["buy_cart_item_result_stock_empty_msg"] = 
+				 	sprintf( MSG_BUY_CART_ITEM_ERR_STOCK_EMPTY, $arrDbItem["ItemName"], $arrDbItem["StockNum"] );
 
 				 // ロールバック
 				$db->rollBack();
@@ -892,6 +893,9 @@ function buyCartItem( $db, &$arrCartData, &$iTotalPrice, &$strCartMsg )
 					. "削除:" . $iRow . "件、カートを空にする件数が異常です" );
 			// 削除失敗
 			$strCartMsg = MSG_BUY_CART_ITEM_ERR;
+
+			// ロールバック
+			$db->rollBack();
 
 			return false;
 		}

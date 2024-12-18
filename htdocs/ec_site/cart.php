@@ -78,7 +78,8 @@ if( isset( $_SESSION["buy_cart_item_result_stock_empty_flg"] ) )
 	// 購入で在庫がなかったフラグがONの時
 	if( $_SESSION["buy_cart_item_result_stock_empty_flg"] )
 	{
-		$strCartMsg = MSG_BUY_CART_ITEM_ERR_STOCK_EMPTY;
+		// 購入で在庫がなかったメッセージ
+		$strCartMsg = $_SESSION["buy_cart_item_result_stock_empty_msg"];
 		// 購入で在庫がなかったフラグ初期化
 		$_SESSION["buy_cart_item_result_stock_empty_flg"] = false;
 	}	

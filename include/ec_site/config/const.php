@@ -81,7 +81,7 @@ define( "MSG_DELETE_CART_ITEM_ERR",			"カート商品の削除に失敗しま�
 
 define( "MSG_BUY_CART_ITEM_SUCCESS",			"商品の購入が完了しました"	);
 define( "MSG_BUY_CART_ITEM_ERR",				"商品の購入に失敗しました"	);
-define( "MSG_BUY_CART_ITEM_ERR_STOCK_EMPTY",	"在庫がありませんでした"		);
+define( "MSG_BUY_CART_ITEM_ERR_STOCK_EMPTY",	"「%s」の在庫がありませんでした（残り%d個）");
 
 define( "MSG_HEADER_LOGIN_KIND_ADMIN",		"さん：管理者ログイン中"			);
 define( "MSG_HEADER_LOGIN_KIND_NORMAL",		"さん：ログイン中"					);
