@@ -37,7 +37,7 @@ include( "common/head_view.php" );
 			<label for="user-name">ユーザー名</label>
 			<input type="text" id="user-name" name="user_name" value="<?= $strUserName; ?>" placeholder="UserName" required><br>
 			<label for="password">パスワード</label>
-			<input type="text" id="password" name="password" value="<?= $strPassword; ?>" placeholder="PassWord" required><br>
+			<input type="password" id="password" name="password" value="<?= $strPassword; ?>" placeholder="PassWord" required><br>
 			<input type="checkbox" name="cookie_confirmation" value="checked" <?= $strCookieConfirmation;?>>次回からログイン情報の入力を省略する<br>
 			<br>
 			<input type="submit" name="login" value="ログイン"><br>

@@ -40,7 +40,7 @@ include( "common/head_view.php" );
 			<input type="text" id="user_name" name="user_name" value="<?php echo $strUserName; ?>" pattern="<?= PREG_PATTERN_USER_NAME_FORM ?>" placeholder="UserName" required><br>
 			<div class="account-form-description">※半角英数字とアンダースコアのみ、5文字以上</div>
 			<label for="password">パスワード</label>
-			<input type="text" id="password" name="password" value="<?php echo $strPassword; ?>" pattern="<?= PREG_PATTERN_PASSWORD_FORM ?>" placeholder="PassWord" required><br>
+			<input type="password" id="password" name="password" value="<?php echo $strPassword; ?>" pattern="<?= PREG_PATTERN_PASSWORD_FORM ?>" placeholder="PassWord" required><br>
 			<div class="account-form-description">※半角英数字とアンダースコアのみ、8文字以上</div>
 			<br>
 			<input type="submit" value="ユーザー登録"><br>
