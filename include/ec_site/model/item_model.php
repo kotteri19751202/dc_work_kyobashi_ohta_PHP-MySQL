@@ -149,9 +149,6 @@ function registItem( $db, &$strRegistItemMsg )
 
 	try
 	{
-		// トランザクション開始
-		//$db->beginTransaction();
-
 		// 挿入クエリ作成
 		$strInsertQuery = "INSERT INTO " . TABLE_NAME_ITEM 
 							. " VALUES( NULL, :itemName, :imageData,"
@@ -180,9 +177,6 @@ function registItem( $db, &$strRegistItemMsg )
 		// 登録完了
 		$strRegistItemMsg = MSG_REGIST_ITEM_SUCCESS;
 
-		// コミット
-		//$db->commit();
-
 		return true;
 	}
 	catch( PDOException $e )
@@ -193,8 +187,6 @@ function registItem( $db, &$strRegistItemMsg )
 		dprint( "クエリエラーです。" );
 		// エラーメッセージ表示
 		dprint( $e->getMessage() );
-		// ロールバック
-		//$db->rollBack();
 		// 登録失敗
 		$strRegistItemMsg = MSG_REGIST_ITEM_ERR;
 
@@ -265,9 +257,6 @@ function updateItemStockNum( $db, &$strItemMsg )
 							", UpdateTime = now() " .
 							" WHERE ItemID = :itemID";
 		
-		// トランザクション開始
-		//$db->beginTransaction();
-
 		// クエリの実行準備をする
 		$stmt = $db->prepare( $strUpdateQuery );
 		// 値をバインドする
@@ -283,14 +272,11 @@ function updateItemStockNum( $db, &$strItemMsg )
 		if( $iRow != 1 )
 		{
 			dprint( $iRow . "件、アイテム個数の更新件数が異常です" );
-			// 更新失敗？
+			// 更新失敗
 			$strItemMsg = MSG_UPDATE_ITEM_STOCK_NUM_ERR;
 
 			return false;
 		}
-		
-		// コミット
-		//$db->commit();
 		
 		dprint( "アイテム個数を更新しました。" );
 		// 更新完了
@@ -370,9 +356,6 @@ function changeItemPublicFlg( $db, &$strItemMsg )
 							", UpdateTime = now() " .
 							" WHERE ItemID = :itemID";
 		
-		// トランザクション開始
-		//$db->beginTransaction();
-
 		// クエリの実行準備をする
 		$stmt = $db->prepare( $strUpdateQuery );
 		// 値をバインドする
@@ -384,9 +367,6 @@ function changeItemPublicFlg( $db, &$strItemMsg )
 		// 件数取得
 		$iRow = $stmt->rowCount();
 
-		// コミット
-		//$db->commit();
-		
 		// 件数が1件じゃない時
 		if( $iRow != 1 )
 		{
@@ -411,8 +391,6 @@ function changeItemPublicFlg( $db, &$strItemMsg )
 		dprint( "クエリエラーです。" );
 		// エラーメッセージ表示
 		dprint( $e->getMessage() );
-		// ロールバック
-		//$db->rollBack();
 		// 削除失敗
 		$strItemMsg = MSG_CHANGE_ITEM_PUBLIC_FLG_ERR;
 

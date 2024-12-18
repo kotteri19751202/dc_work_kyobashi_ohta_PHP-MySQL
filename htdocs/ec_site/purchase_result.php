@@ -67,9 +67,7 @@ $iTotalPrice = 0;		// 合計金額の取得
 // POSTチェック 
 checkPost( $db, $arrCartData, $iTotalPrice, $strCartMsg );
 
-// カートデータの取得
-//getCartData( $db, $arrCartData, $iTotalPrice, $strCartMsg );
-
+// デバッグ表示
 dprint( $iTotalPrice );
 
 
