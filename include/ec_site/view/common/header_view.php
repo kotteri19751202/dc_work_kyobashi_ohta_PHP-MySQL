@@ -22,7 +22,7 @@
 		if( $_SESSION["is_admin"] )
 		{
 			$strLoginStatus = $_SESSION["user_name"] . MSG_HEADER_LOGIN_KIND_ADMIN;
-			$strManageItemLink = '<a href="manage_item.php">【' . PAGE_NAME_MANAGE_ITEM . '】</a>';
+			$strManageItemLink = '<a href="manage_item.php">【' . PAGE_NAME_MANAGE_ITEM . '】</a>' . "\n";
 		}
 		else // 管理者権限じゃない時
 		{
@@ -42,7 +42,7 @@
 			<a href="item_list.php">【<?= PAGE_NAME_ITEM_LIST ?>】</a>
 			<a href="cart.php">【<?= PAGE_NAME_CART ?>】</a>
 			<?= $strManageItemLink ?>
-		</div>	
+		</div>
 <?php
 	}
 ?>
