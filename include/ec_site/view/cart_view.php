@@ -52,7 +52,7 @@ include( "common/head_view.php" );
 				<!-- アイテム画像 -->
 				<img class='item-image' src= "<?= $srcData ?>" alt='<?= $arrRow['ItemName']?>' /><br>
 				<!-- アイテム名 -->	
-				<div class="item-name"><?= $arrRow['ItemName'] ?> </div>
+				<div class="item-name"><?= $arrRow['ItemName'] ?></div>
 				<!-- 価格 -->
 				<div class="item-price"><?= $arrRow['Price'] ?><span>円(税込)</span></div>
 				<!-- 個数 -->
