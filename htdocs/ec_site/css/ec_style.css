@@ -118,7 +118,7 @@ ul{
 }
 
 .min-width{
-	min-width: 460px;
+	min-width: 375px;
 }
 
 .main-container{
@@ -177,13 +177,13 @@ header{
 	margin-bottom: 20px;
 }
 .mv-orange{
-	background-image: url(./image/mv-orange.jpg);
+	background-image: url(../image/mv-orange.jpg);
 }
 .mv-apple{
-	background-image: url(./image/mv-apple.jpg);
+	background-image: url(../image/mv-apple.jpg);
 }
 .mv-fruit{
-	background-image: url(./image/mv-fruit.jpg);
+	background-image: url(../image/mv-fruit.jpg);
 }
 
 /* ログイン関連 ------------------------------------------*/
@@ -392,9 +392,20 @@ footer{
 /*=====================================================================*/
 /* レスポンシブ関連 
 /*=====================================================================*/
-@media screen and (max-width: 640px) { /*768px*/
+@media screen and (max-width: 768px) { /* タブレット対応 */
 	/* 共通設定 ----------------------------------------------*/
-	
+/*
+	h1{
+		font-size: var(--fs-large);
+	}
+	h2{
+		font-size: var(--fs-large);
+	}
+	.main-container{
+		min-width: 375px;
+	}
+*/
+
 	/* ヘッダー関連 ------------------------------------------*/
 	header{
 		height: 48px;
@@ -404,5 +415,9 @@ footer{
 	}	
 	.header-right{
 		display: none;
+	}
+
+	.hamburger-button{
+		display: flex;
 	}
 }
