@@ -5,15 +5,15 @@
 -->
 
 <?php
-// ページ名
-$strPageName = PAGE_NAME_CART;
-// ページタイトル
-$strPageTitle = SITE_NAME . " | " . $strPageName;
-// ページ説明
-$strPageDiscription = PAGE_DISCRIPTION_CART;
+	// ページ名
+	$strPageName = PAGE_NAME_CART;
+	// ページタイトル
+	$strPageTitle = SITE_NAME . " | " . $strPageName;
+	// ページ説明
+	$strPageDiscription = PAGE_DISCRIPTION_CART;
 
-// ヘッドの読み込み
-include( "common/head_view.php" );
+	// ヘッドの読み込み
+	include( "common/head_view.php" );
 ?>
 </head>
 

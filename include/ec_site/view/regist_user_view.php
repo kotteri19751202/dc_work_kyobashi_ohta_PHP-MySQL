@@ -5,16 +5,17 @@
 -->
 
 <?php
-// ページ名
-$strPageName = PAGE_NAME_REGIST_USER;
-// ページタイトル
-$strPageTitle = SITE_NAME . " | " . $strPageName;
-// ページ説明
-$strPageDiscription = PAGE_DISCRIPTION_REGIST_USER;
+	// ページ名
+	$strPageName = PAGE_NAME_REGIST_USER;
+	// ページタイトル
+	$strPageTitle = SITE_NAME . " | " . $strPageName;
+	// ページ説明
+	$strPageDiscription = PAGE_DISCRIPTION_REGIST_USER;
 
-// ヘッドの読み込み
-include( "common/head_view.php" );
+	// ヘッドの読み込み
+	include( "common/head_view.php" );
 ?>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"><!-- スタイルシート（FontAwesome） -->
 </head>
 
 <body>
