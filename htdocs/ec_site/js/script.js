@@ -27,7 +27,10 @@ const initPasswordToggleVisibility = () =>
 {
 	// オブジェクト取得
 	let passwordInput = document.getElementById( "password" );
+	if( null == passwordInput ) return;
+
 	let passwordEye = document.getElementById( "password-eye" );
+	if( null == passwordEye ) return;
 
 	// クリック時の処理
 	passwordEye.addEventListener( "click", () =>
@@ -61,4 +64,4 @@ const initPasswordToggleVisibility = () =>
 alignItemBoxLeft();
 
 // パスワード可視性の切り替え処理初期化
-initPasswordViewToggle();
+initPasswordToggleVisibility();
