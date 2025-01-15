@@ -886,7 +886,7 @@ function buyCartItem( $db, &$arrCartData, &$iTotalPrice, &$strCartMsg )
 		// 件数取得
 		$iRow = $stmt->rowCount();
 
-		// 件数が1件じゃない時
+		// 件数が一致しなかったら
 		if( $iRow != count( $_POST["item"] ) )
 		{
 			dprint( "画面:" . count( $_POST["item"] ) . "件、"

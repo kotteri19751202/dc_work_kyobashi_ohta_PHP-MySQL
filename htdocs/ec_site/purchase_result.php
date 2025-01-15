@@ -62,7 +62,7 @@ $db = connectDB();
 
 $strCartMsg = ""; 		// カートメッセージ
 $arrCartData = [[]];	// カートデータ配列
-$iTotalPrice = 0;		// 合計金額の取得
+$iTotalPrice = 0;		// 合計金額
 
 // POSTチェック 
 checkPost( $db, $arrCartData, $iTotalPrice, $strCartMsg );
