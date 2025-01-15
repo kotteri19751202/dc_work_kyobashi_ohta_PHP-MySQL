@@ -34,10 +34,13 @@ include( "common/head_view.php" );
 		
 		<!-- ログインフォーム -->
 		<form class="account-form" method="post">
-			<label for="user-name">ユーザー名</label>
+			<label for="user-name">ユーザー名</label><br>
 			<input type="text" id="user-name" name="user_name" value="<?= $strUserName; ?>" placeholder="UserName" required><br>
-			<label for="password">パスワード</label>
-			<input type="password" id="password" name="password" value="<?= $strPassword; ?>" placeholder="PassWord" required><br>
+			<label for="password">パスワード：
+				<!-- パスワード表示と非表示の目アイコン -->
+				<span id="password-eye" class="far fa-eye-slash"></span><br>
+			</label>
+			<input type="password" id="password" name="password" value="<?= $strPassword; ?>" placeholder="PassWord" required><br><br>
 			<input type="checkbox" name="cookie_confirmation" value="checked" <?= $strCookieConfirmation;?>>次回からログイン情報の入力を省略する<br>
 			<br>
 			<input type="submit" name="login" value="ログイン"><br>

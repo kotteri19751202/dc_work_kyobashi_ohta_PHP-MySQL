@@ -36,10 +36,13 @@ include( "common/head_view.php" );
 
 		<!-- ユーザー登録フォーム -->
 		<form class="account-form" action="regist_user.php" method="post">
-			<label for="user_name">ユーザー名</label>
+			<label for="user_name">ユーザー名</label><br>
 			<input type="text" id="user_name" name="user_name" value="<?php echo $strUserName; ?>" pattern="<?= PREG_PATTERN_USER_NAME_FORM ?>" placeholder="UserName" required><br>
 			<div class="account-form-description">※半角英数字とアンダースコアのみ、5文字以上</div>
-			<label for="password">パスワード</label>
+			<label for="password">パスワード：
+				<!-- パスワード表示と非表示の目アイコン -->
+				<span id="password-eye" class="far fa-eye-slash"></span><br>
+			</label>
 			<input type="password" id="password" name="password" value="<?php echo $strPassword; ?>" pattern="<?= PREG_PATTERN_PASSWORD_FORM ?>" placeholder="PassWord" required><br>
 			<div class="account-form-description">※半角英数字とアンダースコアのみ、8文字以上</div>
 			<br>
